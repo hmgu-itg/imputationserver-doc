@@ -1,0 +1,34 @@
+site_name: Munich Imputation Server
+
+theme:
+  name: material
+  palette:
+    primary: deep purple
+
+nav:
+- Home: index.md
+- Getting Started: getting-started.md
+- Data Preparation: prepare-your-data.md
+- Reference Panels: reference-panels.md
+- Pipeline Overview: pipeline.md
+- Security: data-sensitivity.md
+- FAQ: faq.md
+- Developer Documentation:
+  - API: api.md
+  - Docker: docker.md
+  - Create Reference Panels: create-reference-panels.md
+- Contact: contact.md
+
+repo_name: hmgu-itg/imputationserver
+repo_url: https://github.com/hmgu-itg/imputationserver
+edit_uri: edit/master/docs
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/hmgu-itg/imputationserver
+
+markdown_extensions:
+    - toc:
+        permalink:
+    - admonition:

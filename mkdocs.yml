@@ -1,9 +1,6 @@
 site_name: Munich Imputation Server
 
-theme:
-  name: material
-  palette:
-    primary: deep purple
+theme: readthedocs
 
 nav:
 - Home: index.md

@@ -24,6 +24,7 @@ Feel free to contact [us](http://146.107.169.108:8082/index.html#!pages/contact)
 
 - Dr. William Rayner
 - Hariharan Sethuraman
+- Young-Chan Park
 
 ## Contributing
 Project contributions are more than welcome! See our [CONTRIBUTING.md](CONTRIBUTING.md) file for details.

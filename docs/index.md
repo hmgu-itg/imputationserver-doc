@@ -12,4 +12,4 @@ Please cite this paper if you use Munich Imputation Server in your publication:
 
 The complete source code is hosted on [GitHub](https://github.com/genepi/imputationserver/) using Travis CI for continuous integration.
 
-Hi
+

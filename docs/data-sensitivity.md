@@ -21,8 +21,7 @@ A wide array of security measures are in force on the imputation servers:
 
 - SSH login to the servers is restricted to only systems administrators.
 - Direct root login via SSH is not allowed from the public Internet.
-- The public-facing side of the servers sits behind the School of Public Health's Checkpoint virtual firewall instance where a default-deny policy is used on inbound traffic; only explicitly allowed TCP ports are passed.
-- The School of Public Health also makes use of NIDS technologies such as Snort and Peakflow on its network links for traffic analysis and threat detection.
+- The public-facing side of the servers sits behind the default firewall settings (ufw).
 - On imputation server itself, updates are run regularly by systems administrators who follow several zero-day computer security announcement lists; the OSSEC HIDS is used for log analysis and anomaly detection; and Denyhosts is used to thwart brute-force SSH login attacks.
 
 

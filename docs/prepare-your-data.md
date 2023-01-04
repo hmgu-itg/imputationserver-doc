@@ -9,9 +9,7 @@ Munich Imputation Server accepts VCF files compressed with [bgzip](http://samtoo
 !!! note
     Several \*.vcf.gz files can be uploaded at once.
 
-
-
-## Quality Control for HRC, 1000G and CAAPA imputation
+## Quality Control for HRC or 1000G 
 
 Will Rayner provides a great toolbox to prepare data: [HRC or 1000G Pre-imputation Checks](http://www.well.ox.ac.uk/~wrayner/tools/).
 

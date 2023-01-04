@@ -20,7 +20,7 @@ The following options are available:
 
 ### Reference Panel
 
-Our server offers genotype imputation from different reference panels. The most accurate and largest panel is **HRC (Version r1.1 2016)**. Please select one that fulfills your needs and supports the population of your input data:
+Our server offers genotype imputation from different reference panels. Please select one that fulfills your needs and supports the population of your input data:
 
 - 1000 Genomes Phase 3 (Version 5)
 - HapMap 2

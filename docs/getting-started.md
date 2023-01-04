@@ -25,8 +25,6 @@ Our server offers genotype imputation from different reference panels. The most 
 - 1000 Genomes Phase 3 (Version 5)
 - HapMap 2
 
-More details about all available reference panels can be found [here](/reference-panels/).
-
 ### Input files
 
 VCF files can be uploaded either from your local disk or by specifying a remote sftp / HTTPS location. In both cases, several files or several locations can be selected at once. Please make sure that all files fulfill the [requirements](/prepare-your-data).

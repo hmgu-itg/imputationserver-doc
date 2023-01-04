@@ -1,7 +1,7 @@
 # Munich Imputation Server
 
 
-[Munich Imputation Server](http://146.107.169.108:8082) provides a free genotype imputation service using [Minimac4](http://genome.sph.umich.edu/wiki/Minimac4). You can upload phased or unphased GWAS genotypes and receive phased and imputed genomes in return. Our server offers imputation from 1000 Genomes and the HapMap 2 reference panel and more reference panels will be added in the future. For all uploaded datasets an extensive QC is performed.
+[Munich Imputation Server](http://146.107.169.108:8082) provides a free genotype imputation service using [Minimac4](http://genome.sph.umich.edu/wiki/Minimac4). You can upload phased or unphased GWAS genotypes and receive phased and imputed genomes in return. Currently, our server offers imputation from 1000 Genomes and the HapMap 2 reference panel and more reference panels will be added in the future. For all uploaded datasets an extensive QC is performed.
 
 ![](images/munich_imputation_server.png)
 

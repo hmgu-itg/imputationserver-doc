@@ -171,7 +171,7 @@ All results can be downloaded directly via your browser by clicking on the filen
 
 In order to download results via the commandline using `wget`or `aria2` you need to click on the **share** symbol (located right to the file size) to get the needed private links.
 
-![](images/share-data01.png)
+![](images/share_data_link.png)
 
 A new dialog appears which provides you the private link. Click on the tab **wget command** to get a copy & paste ready command that can be used on Linux or MacOS to download the file in you terminal:
 

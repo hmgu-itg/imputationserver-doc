@@ -42,7 +42,7 @@ Command:
 ```sh
 TOKEN="YOUR-API-TOKEN";
 
-curl -H "X-Auth-Token: $TOKEN" https://imputationserver.sph.umich.edu/api/v2/jobs
+curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-muenchen.de/api/v2/jobs
 ```
 
 Response:
@@ -84,7 +84,7 @@ import requests
 import json
 
 # imputation server url
-url = 'https://imputationserver.sph.umich.edu/api/v2'
+url = 'https://imputationserver.helmholtz-muenchen.de/api/v2'
 token = 'YOUR-API-TOKEN';
 
 # add token to header (see authentication)
@@ -111,14 +111,14 @@ Command:
 ```sh
 TOKEN="YOUR-API-TOKEN";
 
-curl -H "X-Auth-Token: $TOKEN" https://imputationserver.sph.umich.edu/api/v2/jobs/job-20160504-155023/status
+curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-muenchen.de/api/v2/jobs/job-20160504-155023/status
 ```
 
 Response:
 
 ```json
 {
-  "application":"Michigan Imputation Server (Minimac4) 1.5.8",
+  "application":"Munich Imputation Server (Minimac4) 1.6.8",
   "applicationId":"minimac4",
   "deletedOn":-1,
   "endTime":1462369824173,
@@ -144,5 +144,5 @@ Response:
 ```sh
 TOKEN="YOUR-API-TOKEN";
 
-curl -H "X-Auth-Token: $TOKEN" https://imputationserver.sph.umich.edu/api/v2/jobs/job-20160504-155023/
+curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-muenchen.de/api/v2/jobs/job-20160504-155023/
 ```

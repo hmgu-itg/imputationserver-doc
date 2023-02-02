@@ -12,7 +12,7 @@ Please cite this paper if you use Munich Imputation Server in your GWAS study:
 
 ## Setup your first imputation job
 
-Please [login](http://146.107.169.108:8082/index.html#!pages/login) with your credentials and click on the **Run** tab to start a new imputation job. The submission dialog allows you to specify the properties of your imputation job.
+Please [login](https://imputationserver.helmholtz-muenchen.de/index.html#!pages/login) with your credentials and click on the **Run** tab to start a new imputation job. The submission dialog allows you to specify the properties of your imputation job.
 
 ![](images/run_job_screenshot.png)
 
@@ -27,7 +27,7 @@ Our server offers genotype imputation from different reference panels. Please se
 
 ### Input files
 
-VCF files can be uploaded either from your local disk or by specifying a remote sftp / HTTPS location. In both cases, several files or several locations can be selected at once. Please make sure that all files fulfill the [requirements](/prepare-your-data).
+VCF files can be uploaded either from your local disk or by specifying a remote sftp / HTTPS location. In both cases, several files or several locations can be selected at once. Please make sure that all files fulfill the [requirements](https://imputationserver-doc.readthedocs.io/en/latest/prepare-your-data/).
 
 
 #### Upload VCF files from your computer
@@ -44,9 +44,9 @@ After you have confirmed your choice, all selected files are listed in the submi
 
 #### Import VCF files via SFTP
 
-An other convenient way to use your data is by importing it directly from a remote SSH server. This can be achieved by selecting **Secure File Transfer Protocol (SFTP)**.
+Another convenient way to use your data is by importing it directly from a remote SSH server. This can be achieved by selecting **Secure File Transfer Protocol (SFTP)**.
 
-After clicking on the **Import Files** button, a new dialog appears where you can enter your SFTP credentials and the URLs of your files or folders. A URL consists of the server address followed by the full Unix path. A path can be either point to a folder or to a file. Several paths can be specified in consecutive lines.
+After clicking on the **Import Files** button, a new dialog appears where you can enter your SFTP credentials and the URL of your files or folders. A URL consists of the server address followed by the full Unix path. A path can be either point to a folder or to a file. Several paths can be specified in consecutive lines.
 
 ![](images/sftp_screenshot.png)
 
@@ -121,7 +121,7 @@ After Input Validation has finished, basic statistics can be viewed directly in 
 
 ![](images/Job_summary.png)
 
-If you encounter problems with your data please read this tutorial about [Data Preparation](/prepare-your-data) to ensure your data is in the correct format.
+If you encounter problems with your data please read this tutorial about [Data Preparation](https://imputationserver-doc.readthedocs.io/en/latest/prepare-your-data/) to ensure your data is in the correct format.
 
 ### Quality Control
 
@@ -134,7 +134,7 @@ In this step we check each variant and exclude it in case of:
 5. allele mismatch between reference panel and uploaded data
 6. SNP call rate < 90%
 
-All filtered variants are listed in a file called `statistics.txt` which can be downloaded by clicking on the provided link. More informations about our QC pipeline can be found [here](/pipeline).
+All filtered variants are listed in a file called `statistics.txt` which can be downloaded by clicking on the provided link. More informations about our QC pipeline can be found [here](https://imputationserver-doc.readthedocs.io/en/latest/pipeline/).
 
 ![](images/Quality_control.png)
 

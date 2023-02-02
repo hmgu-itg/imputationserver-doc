@@ -9,6 +9,8 @@ Michigan Imputation Server provides a free genotype imputation service using Min
 
 * [Dr.William Rayner](mailto:william.rayner@helmholtz-muenchen.de)
 * [Hariharan Sethuraman](mailto:hariharan.sethuraman@helmholtz-muenchen.de)
+* [Andrei Barysenka](mailto:andrei.barysenka@helmholtz-muenchen.de)
+* [Young-Chan Park](mailto:young-chan.park@helmholtz-muenchen.de)
 
 ##Michigan Imputation Server Team
 

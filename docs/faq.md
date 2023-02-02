@@ -16,7 +16,7 @@ Your data is available for 7 days. In case you need an extension, please let [us
 We provide wget command for all results. Please open the results tab. The last column in each row includes direct links to all files.
 
 ## Can I set up Munich Imputation Server locally?
-We are providing a single-node Docker image that can be used to impute from Hapmap2 and 1000G Phase3 locally. Click [here](/docker) to give it a try. For usage in production, we highly recommend setting up a Hadoop cluster.
+We are providing a single-node Docker image that can be used to impute from Hapmap2 and 1000G Phase3 locally. Click [here](https://imputationserver.readthedocs.io/en/latest/docker/) to give it a try. For usage in production, we highly recommend setting up a Hadoop cluster.
 
 ## Your web service looks great. Can I set up my own web service as well?
 All web service functionality is provided by [Cloudgene](http://www.cloudgene.io/). Please contact us, in case you want to set up your own service.

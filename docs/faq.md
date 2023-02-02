@@ -7,7 +7,7 @@ Munich Imputation Server creates a random password for each imputation job. This
 Please check the following points: (1) When selecting AES256 encryption, please use 7z to unzip your files (Debian: `sudo apt-get install p7zip-full`). For our default encryption all common programs should work. (2) If your password includes special characters (e.g. \\), please put single or double quotes around the password when extracting it from the command line (e.g. `7z x -p"PASSWORD" chr_22.zip`).
 
 ## Extending expiration date or reset download counter
-Your data is available for 7 days. In case you need an extension, please let [us](/contact) know.
+Your data is available for 7 days. In case you need an extension, please let [us](https://imputationserver-doc.readthedocs.io/en/latest/contact/) know.
 
 ## How can I improve the download speed?
 [aria2](https://aria2.github.io/) tries to utilize your maximum download bandwidth. Please keep in mind to raise the k parameter significantly (-k, --min-split-size=SIZE). You will otherwise hit the Munich Imputation Server download limit for each file (thanks to Anthony Marcketta for point this out).

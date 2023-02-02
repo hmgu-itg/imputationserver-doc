@@ -1,6 +1,6 @@
 # Getting started
 
-To use Munich Imputation Server, a [registration](http://146.107.169.108:8082/index.html#!pages/register) is required.
+To use Munich Imputation Server, a [registration](https://imputationserver.helmholtz-muenchen.de/index.html#!pages/register) is required.
 We send an activation mail to the provided address. Please follow the instructions in the email to activate your account. If it doesn't arrive, ensure you have entered the correct email address and check your spam folder.
 
 **After the email address has been verified, the service can be used without any costs.**

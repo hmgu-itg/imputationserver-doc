@@ -9,7 +9,6 @@ Since data is transfered to our server located in Munich, a wide array of securi
 - After imputation is finished, the data uploader has 7 days to use an encrypted connection to get results back.
 
 
-
 ## Who has access?
 
 To upload and download data, users must register with a unique e-mail address and strong password. Each user can only download imputation results for samples that they have themselves uploaded; no other imputation server users will be able to access your data.

@@ -1,10 +1,10 @@
 # API Reference
 
-The REST APIs provide programmatic ways to submit new jobs and to download data from Munich Imputation Server. It identifies users using authentication tokens, responses are provided in JSON format.
+The REST APIs provide programmatic ways to submit new jobs and to download data from Helmholtz Munich Imputation Server (HMIS). It identifies users using authentication tokens, responses are provided in JSON format.
 
 
 ## Authentication
-Munich Imputation Server uses a token-based authentication. The token is required for all future interaction with the server. The token can be created and downloaded from your user profile (username -> Profile):
+HMIS uses a token-based authentication. The token is required for all future interaction with the server. The token can be created and downloaded from your user profile (username -> Profile):
 
 ![Activate API](https://raw.githubusercontent.com/genepi/imputationserver-docker/master/images/api.png)
 
@@ -118,7 +118,7 @@ Response:
 
 ```json
 {
-  "application":"Munich Imputation Server (Minimac4) 1.6.8",
+  "application":"Helmholtz Munich Imputation Server (Minimac4) 1.6.8",
   "applicationId":"minimac4",
   "deletedOn":-1,
   "endTime":1462369824173,

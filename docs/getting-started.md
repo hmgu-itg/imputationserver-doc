@@ -160,7 +160,7 @@ The user is notified by email, as soon as the imputation job has finished. A zip
 
 
 !!! important "All data is deleted automatically after 7 days"
-    Be sure to download all needed data in this time period. We send you a reminder 48 hours before we delete your data. Once your job hast the state **retired**, we are not able to recover your data!
+    Be sure to download all needed data in this time period. We send you a reminder 48 hours before we delete your data. Once your job has the state **retired**, we are not able to recover your data!
 
 
 ###  Download via a web browser

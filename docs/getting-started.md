@@ -14,7 +14,7 @@ Please cite this paper if you use HMIS in your GWAS study:
 
 Please [login](https://imputationserver.helmholtz-muenchen.de/index.html#!pages/login) with your credentials and click on the **Run** tab to start a new imputation job. The submission dialog allows you to specify the properties of your imputation job.
 
-![](images/run_job_screenshot.png)
+![](images/images_new/job_page.png)
 
 The following options are available:
 
@@ -34,12 +34,12 @@ VCF files can be uploaded either from your local disk or by specifying a remote 
 
 When using the file upload, data is uploaded from your local file system to HMIS. By clicking on **Select Files** an open dialog appears where you can select your VCF files:
 
-![](images/upload_vcf.png)
+![](images/images_new/data_input_selection.png)
 
 Multiple files can be selected using the `ctrl`, `cmd` or `shift` keys, depending on your operating system.
 After you have confirmed your choice, all selected files are listed in the submission dialog:
 
-![](images/vcf_selected.png)
+![](images/images_new/data_inout.png)
 
 
 #### Import VCF files via SFTP

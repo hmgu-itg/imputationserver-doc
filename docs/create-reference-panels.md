@@ -1,3 +1,7 @@
+# Before you read
+
+Please note that this documentation is currently outdated.
+
 # Create a Reference Panel
 
 This tutorial will help you to create your own reference panel and integrate it into Helmholtz Munich Imputation Server (HMIS). 

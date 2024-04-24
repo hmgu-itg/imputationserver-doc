@@ -1,20 +1,20 @@
 # Getting started
 
-To use Helmholtz Munich Imputation Server (HMIS), a [registration](https://imputationserver.helmholtz-muenchen.de/index.html#!pages/register) is required.
+To use Helmholtz Munich Imputation Server, a [registration](https://imputationserver.helmholtz-munich.de/index.html#!pages/register) is required.
 We send an activation mail to the provided address. Please follow the instructions in the email to activate your account. If it doesn't arrive, ensure you have entered the correct email address and check your spam folder.
 
 **After the email address has been verified, the service can be used without any costs.**
 
-Please cite this paper if you use HMIS in your GWAS study:
+Please cite this paper if you use Helmholtz Munich Imputation Server in your GWAS study:
 
 > Das S, Forer L, Schönherr S, Sidore C, Locke AE, Kwong A, Vrieze S, Chew EY, Levy S, McGue M, Schlessinger D, Stambolian D, Loh PR, Iacono WG, Swaroop A, Scott LJ, Cucca F, Kronenberg F, Boehnke M, Abecasis GR, Fuchsberger C. [Next-generation genotype imputation service and methods](https://www.ncbi.nlm.nih.gov/pubmed/27571263). Nature Genetics 48, 1284–1287 (2016).
 
 
 ## Setup your first imputation job
 
-Please [login](https://imputationserver.helmholtz-muenchen.de/index.html#!pages/login) with your credentials and click on the **Run** tab to start a new imputation job. The submission dialog allows you to specify the properties of your imputation job.
+Please [login](https://imputationserver.helmholtz-munich.de/index.html#!pages/login) with your credentials and click on the **Run** tab to start a new imputation job. The submission dialog allows you to specify the properties of your imputation job.
 
-![](images/run_job_screenshot.png)
+![](images/submit-job01.png)
 
 The following options are available:
 
@@ -25,48 +25,30 @@ Our server offers genotype imputation from different reference panels. Please se
 - 1000 Genomes Phase 3 (Version 5)
 - HapMap 2
 
-### Input files
+More details about all available reference panels can be found [here](https://imputationserver.readthedocs.io/en/latest/reference-panels/).
 
-VCF files can be uploaded either from your local disk or by specifying a remote sftp / HTTPS location. In both cases, several files or several locations can be selected at once. Please make sure that all files fulfill the [requirements](https://imputationserver-doc.readthedocs.io/en/latest/prepare-your-data/).
+### Upload VCF files from your computer
 
+When using the file upload, data is uploaded from your local file system to Michigan Imputation Server. By clicking on **Select Files** an open dialog appears where you can select your VCF files:
 
-#### Upload VCF files from your computer
-
-When using the file upload, data is uploaded from your local file system to HMIS. By clicking on **Select Files** an open dialog appears where you can select your VCF files:
-
-![](images/upload_vcf.png)
+![](images/upload-vcf.png)
 
 Multiple files can be selected using the `ctrl`, `cmd` or `shift` keys, depending on your operating system.
 After you have confirmed your choice, all selected files are listed in the submission dialog:
 
-![](images/vcf_selected.png)
+![](images/uploaded-vcf.png)
 
-
-#### Import VCF files via SFTP
-
-Another convenient way to use your data is by importing it directly from a remote SSH server. This can be achieved by selecting **Secure File Transfer Protocol (SFTP)**.
-
-After clicking on the **Import Files** button, a new dialog appears where you can enter your SFTP credentials and the URL of your files or folders. A URL consists of the server address followed by the full Unix path. A path can be either point to a folder or to a file. Several paths can be specified in consecutive lines.
-
-![](images/sftp_screenshot.png)
+Please make sure that all files fulfill the [requirements](./prepare-your-data.md).
 
 
 !!! important
-    Be sure that your SFTP server is **not in a private network** and you are able to establish a connection from outside.
-
-#### Import VCF files via HTTPS
-
-Data can also be imported by using HTTP(S) link. This can be achieved by selecting **URLs (HTTP)**.
-
-After clicking on the **Add URLs** button, a new dialog appears where you can add the links.
-
-![](images/import_data.png)		
+    Since version 1.7.2 URL-based uploads (sftp and http) are no longer supported. Please use direct file uploads instead. 
 
 ### Build
-Please select the build of your data. Currently the options **hg19** and **hg38** are supported. HMIS automatically updates the genome positions (liftOver) of your data. All reference panels except TOPMed are based on hg19 coordinates.
+Please select the build of your data. Currently the options **hg19** and **hg38** are supported. Michigan Imputation Server automatically updates the genome positions (liftOver) of your data. All reference panels except TOPMed are based on hg19 coordinates.
 
 ### rsq Filter
-To minimize the file size, HMIS includes a r<sup>2</sup> filter option, excluding all imputed SNPs with a r<sup>2</sup>-value (= imputation quality) smaller then the specified value.
+To minimize the file size, Michigan Imputation Server includes a r<sup>2</sup> filter option, excluding all imputed SNPs with a r<sup>2</sup>-value (= imputation quality) smaller then the specified value.
 
 ### Phasing
 
@@ -74,7 +56,7 @@ If your uploaded data is *unphased*, Eagle v2.4 will be used for phasing. In cas
 
 |  Algorithm | Description |
 | ---------- |-------------|
-| **Eagle v2.4** | The [Eagle](https://data.broadinstitute.org/alkesgroup/Eagle/) algorithm estimates haplotype phase using the HRC reference panel. This method is also suitable for single sample imputation. After phasing or imputation you will receive phased genotypes in your VCF files. |
+| **Eagle v2.4** | The [Eagle](https://data.broadinstitute.org/alkesgroup/Eagle/) algorithm estimates haplotype phase using the user selected reference panel. This method is also suitable for single sample imputation. After phasing or imputation you will receive phased genotypes in your VCF files. |
 
 ### Population
 
@@ -82,14 +64,12 @@ Please select the population of your uploaded samples. This information is used 
 
 |  Population | Supported Reference Panels |
 | ----------- | ---------------------------|
-| **AFR** | all |
-| **AMR** | all |
-| **EUR** | all |
-| **Mixed** | all |
-| **AA** | CAAPA |
-| **ASN** | 1000 Genomes Phase 1 (Version 3) |
+| **AFR** | 1000 Genomes Phase 3 (Version 5) |
+| **AMR** | 1000 Genomes Phase 3 (Version 5) |
 | **EAS** | 1000 Genomes Phase 3 (Version 5) |
 | **SAS** | 1000 Genomes Phase 3 (Version 5) |
+| **EUR** | all |
+| **Mixed** | all |
 
 In case your population is not listed or your samples are from different populations, please select **Mixed** to skip the allele frequency check. For mixed populations, no QC-Report will be created.
 
@@ -105,9 +85,7 @@ All Imputation Server results are encrypted by default. Please tick this checkbo
 
 ## Start your imputation job
 
-After confirming our *Terms of Service*, the imputation process can be started immediately by clicking on **Start Imputation**. Input Validation and Quality Control are executed immediately to give you feedback about the data-format and its quality. If your data passed this steps, your job is added to our imputation queue and will be processed as soon as possible. You can check the position in the queue on the job summary page.
-
-![](images/Job_summary.png)
+After confirming our *Terms of Service*, the imputation process can be started immediately by clicking on **Start Imputation**. Input Validation and Quality Control are executed immediately to give you feedback about the data-format and its quality. If your data passed this steps, your job is added to our imputation queue and will be processed as soon as possible. 
 
 We notify you by email as soon as the job is finished or your data don't pass the Quality Control steps.
 
@@ -121,7 +99,8 @@ After Input Validation has finished, basic statistics can be viewed directly in 
 
 ![](images/Job_summary.png)
 
-If you encounter problems with your data please read this tutorial about [Data Preparation](https://imputationserver-doc.readthedocs.io/en/latest/prepare-your-data/) to ensure your data is in the correct format.
+!!! info "Data Preparation"
+    If you encounter problems with your data please read this tutorial about [Data Preparation](./prepare-your-data.md) to ensure your data is in the correct format. 
 
 ### Quality Control
 
@@ -134,11 +113,14 @@ In this step we check each variant and exclude it in case of:
 5. allele mismatch between reference panel and uploaded data
 6. SNP call rate < 90%
 
-All filtered variants are listed in a file called `statistics.txt` which can be downloaded by clicking on the provided link. More informations about our QC pipeline can be found [here](https://imputationserver-doc.readthedocs.io/en/latest/pipeline/).
+All filtered variants are listed in a file called `statistics.txt` which can be downloaded by clicking on the provided link. More informations about our QC pipeline can be found [here](./pipeline.md).
 
-![](images/Quality_control.png)
+![](images/quality-control02.png)
 
 If you selected a population, we compare the allele frequencies of the uploaded data with those from the reference panel. The result of this check is available in the QC report and can be downloaded by clicking on `qcreport.html`.
+
+!!! info "On QC failure"
+    If your data fails the QC step, please refer to the failed job's `qcreport.html` file, per-chromosome log files (e.g. `chr_1.log`), and the "Logs" tab to understand why your job failed. Please refer to the [Quality Control](./pipeline.md#quality-control) section in the [Pipeline Overview](./pipeline.md) page to learn about the QC steps. 
 
 ### Pre-phasing and Imputation
 
@@ -158,28 +140,24 @@ This password is not stored on our server at any time. Therefore, if you lost th
 
 The user is notified by email, as soon as the imputation job has finished. A zip archive including the results can be downloaded directly from the server. To decrypt the results, a one-time password is generated by the server and included in the email. The QC report and filter statistics can be displayed and downloaded as well.
 
+![](images/job-results.png)
 
 !!! important "All data is deleted automatically after 7 days"
-    Be sure to download all needed data in this time period. We send you a reminder 48 hours before we delete your data. Once your job hast the state **retired**, we are not able to recover your data!
+    Be sure to download all needed data in this time period. We send you a reminder 48 hours before we delete your data. Once your job has the state **retired**, we are not able to recover your data!
 
 
 ###  Download via a web browser
 
 All results can be downloaded directly via your browser by clicking on the filename.
 
-![](images/share-data02.png)
+![](images/job-results.png)
 
-In order to download results via the commandline using `wget`or `aria2` you need to click on the **share** symbol (located right to the file size) to get the needed private links.
+### Download using `wget`
+
+In order to download results via the commandline using `wget`or `aria2` you need to click on the **wget** symbol (located right to the folder header) to get the needed private links.
 
 ![](images/share_data_link.png)
 
-A new dialog appears which provides you the private link. Click on the tab **wget command** to get a copy & paste ready command that can be used on Linux or MacOS to download the file in you terminal:
+A new dialog appears which provides you all the private link. Click on the tab **wget command** to get a copy & paste ready command that can be used on Linux or MacOS to download the files individually in your terminal.
 
-
-### Download all results at once
-
-To download all files of a folder (for example folder **Imputation Results**) you can click on the **share** symbol of the folder:
-
-![](images/share-data02.png)
-
-A new dialog appears which provides you all private links at once. Click on the tab **wget commands** to get copy & paste ready commands that can be used on Linux or MacOS to download all files.
+The command for downloading all results at once is also provided, which you can also copy & paste to your terminal to initiate the download. 

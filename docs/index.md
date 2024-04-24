@@ -2,7 +2,7 @@
 
 [Helmholtz Munich Imputation Server](https://imputationserver.helmholtz-muenchen.de) provides a free genotype imputation service using [Minimac4](http://genome.sph.umich.edu/wiki/Minimac4). You can upload phased or unphased GWAS genotypes and receive phased and imputed genomes in return. Currently, our server offers imputation from 1000 Genomes and the HapMap 2 reference panel and more reference panels will be added in the future. For all uploaded datasets an extensive QC is performed.
 
-![](images/munich_imputation_server.png)
+![](images/images_new/imputation_serverhome.png)
 
 Please cite this paper if you use Munich Imputation Server in your publication:
 

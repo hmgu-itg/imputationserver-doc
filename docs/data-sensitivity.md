@@ -8,20 +8,30 @@ Since data is transfered to our server located in Munich, a wide array of securi
 - All results are encrypted with a strong one-time password - thus, only you can read them.
 - After imputation is finished, the data uploader has 7 days to use an encrypted connection to get results back.
 
-
 ## Who has access?
-
 To upload and download data, users must register with a unique e-mail address and strong password. Each user can only download imputation results for samples that they have themselves uploaded; no other imputation server users will be able to access your data.
+
+## Cookies
+We value your privacy and are committed to transparency regarding the use of cookies on our website. Below, we outline our cookie policy to provide you with clarity and assurance.
+
+### What are cookies?
+Cookies are small text files that are placed on your device when you visit a website. They serve various purposes, including enhancing user experience, facilitating website functionality, and analyzing website traffic.
+
+### How do we use cookies?
+We use cookies only for the purpose of facilitating login functionality. These cookies help us recognize your device and authenticate your access to our platform securely. We do not track any personal information or analyze user activities through cookies.
+
+### Why do we use cookies?
+Cookies are essential for providing seamless login experiences to our users. By storing authentication information, cookies enable you to access your account efficiently without the need for repetitive login procedures. We respect your privacy and limit cookie usage exclusively to login purposes.
 
 
 ## What security or firewalls protect access?
 
 A wide array of security measures are in force on the imputation servers:
 
+- The servers are within a private network behind a firewall, and direct access is only possible from within the private network.
 - SSH login to the servers is restricted to only systems administrators.
-- Direct root login via SSH is not allowed from the public Internet.
-- The public-facing side of the servers sits behind the default firewall settings (ufw).
-- On imputation server itself, updates are run regularly by systems administrators who follow several zero-day computer security announcement lists; the OSSEC HIDS is used for log analysis and anomaly detection; and Denyhosts is used to thwart brute-force SSH login attacks.
+- Direct root login via SSH is not allowed.
+- On imputation server itself, updates are run regularly by systems administrators who follow several zero-day computer security announcement lists; and Denyhosts is used to thwart brute-force SSH login attacks.
 
 
 ## What encryption of the data is used while the data are present?

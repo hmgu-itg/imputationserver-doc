@@ -31,12 +31,12 @@ More details about all available reference panels can be found [here](https://im
 
 When using the file upload, data is uploaded from your local file system to Michigan Imputation Server. By clicking on **Select Files** an open dialog appears where you can select your VCF files:
 
-![](images/images_new/data_input_selection.png)
+![](images/upload-vcf.png)
 
 Multiple files can be selected using the `ctrl`, `cmd` or `shift` keys, depending on your operating system.
 After you have confirmed your choice, all selected files are listed in the submission dialog:
 
-![](images/images_new/data_inout.png)
+![](images/uploaded-vcf.png)
 
 Please make sure that all files fulfill the [requirements](./prepare-your-data.md).
 
@@ -87,9 +87,7 @@ All Imputation Server results are encrypted by default. Please tick this checkbo
 
 ## Start your imputation job
 
-After confirming our *Terms of Service*, the imputation process can be started immediately by clicking on **Start Imputation**. Input Validation and Quality Control are executed immediately to give you feedback about the data-format and its quality. If your data passed this steps, your job is added to our imputation queue and will be processed as soon as possible. You can check the position in the queue on the job summary page.
-
-![](images/Job_summary.png)
+After confirming our *Terms of Service*, the imputation process can be started immediately by clicking on **Start Imputation**. Input Validation and Quality Control are executed immediately to give you feedback about the data-format and its quality. If your data passed this steps, your job is added to our imputation queue and will be processed as soon as possible. 
 
 We notify you by email as soon as the job is finished or your data don't pass the Quality Control steps.
 
@@ -103,7 +101,8 @@ After Input Validation has finished, basic statistics can be viewed directly in 
 
 ![](images/Job_summary.png)
 
-If you encounter problems with your data please read this tutorial about [Data Preparation](./prepare-your-data.md) to ensure your data is in the correct format.
+!!! info "Data Preparation"
+    If you encounter problems with your data please read this tutorial about [Data Preparation](./prepare-your-data.md) to ensure your data is in the correct format. 
 
 ### Quality Control
 
@@ -121,6 +120,9 @@ All filtered variants are listed in a file called `statistics.txt` which can be 
 ![](images/quality-control02.png)
 
 If you selected a population, we compare the allele frequencies of the uploaded data with those from the reference panel. The result of this check is available in the QC report and can be downloaded by clicking on `qcreport.html`.
+
+!!! info "On QC failure"
+    If your data fails the QC step, please refer to the failed job's `qcreport.html` file, per-chromosome log files (e.g. `chr_1.log`), and the "Logs" tab to understand why your job failed. Please refer to the [Quality Control](./pipeline.md#quality-control) section in the [Pipeline Overview](./pipeline.md) page to learn about the QC steps. 
 
 ### Pre-phasing and Imputation
 
@@ -143,26 +145,21 @@ The user is notified by email, as soon as the imputation job has finished. A zip
 ![](images/job-results.png)
 
 !!! important "All data is deleted automatically after 7 days"
-    Be sure to download all needed data in this time period. We send you a reminder 48 hours before we delete your data. Once your job hast the state **retired**, we are not able to recover your data!
+    Be sure to download all needed data in this time period. We send you a reminder 48 hours before we delete your data. Once your job has the state **retired**, we are not able to recover your data!
 
 
 ###  Download via a web browser
 
 All results can be downloaded directly via your browser by clicking on the filename.
 
-![](images/share-data02.png)
+![](images/job-results.png)
 
-In order to download results via the commandline using `wget`or `aria2` you need to click on the **share** symbol (located right to the file size) to get the needed private links.
+### Download using `wget`
+
+In order to download results via the commandline using `wget`or `aria2` you need to click on the **wget** symbol (located right to the folder header) to get the needed private links.
 
 ![](images/share_data_link.png)
 
-A new dialog appears which provides you the private link. Click on the tab **wget command** to get a copy & paste ready command that can be used on Linux or MacOS to download the file in you terminal:
+A new dialog appears which provides you all the private link. Click on the tab **wget command** to get a copy & paste ready command that can be used on Linux or MacOS to download the files individually in your terminal.
 
-
-### Download all results at once
-
-To download all files of a folder (for example folder **Imputation Results**) you can click on the **share** symbol of the folder:
-
-![](images/share-data02.png)
-
-A new dialog appears which provides you all private links at once. Click on the tab **wget commands** to get copy & paste ready commands that can be used on Linux or MacOS to download all files.
+The command for downloading all results at once is also provided, which you can also copy & paste to your terminal to initiate the download. 

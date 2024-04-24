@@ -1,6 +1,5 @@
-# Before you read
-
-Please note that this documentation is currently outdated.
+!!! warning "Outdated"
+    Please note that the information regarding [Minimac3](https://github.com/Santy-8128/Minimac3) is currently outdated with the release of [Minimac4](https://github.com/statgen/Minimac4), and that this page is subject to future updates.
 
 # Create a Reference Panel
 

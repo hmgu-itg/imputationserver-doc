@@ -1,20 +1,21 @@
 # API Reference
 
-The REST APIs provide programmatic ways to submit new jobs and to download data from Michigan Imputation Server. It identifies users using authentication tokens, responses are provided in JSON format.
+The REST APIs provide programmatic ways to submit new jobs and to download data from Munich Imputation Server. It identifies users using authentication tokens, responses are provided in JSON format.
 
 
 ## Authentication
-Michigan Imputation Server uses a token-based authentication. The token is required for all future interaction with the server. The token can be created and downloaded from your user profile (username -> Profile):
+Munich Imputation Server uses a token-based authentication. The token is required for all future interaction with the server. The token can be created and downloaded from your user profile (username -> Profile):
 
+#update image after testing
 ![Activate API](https://raw.githubusercontent.com/genepi/imputationserver-docker/master/images/api.png)
 
 For security reasons, Api Tokens are valid for 30 days. You can check the status in the web interface.
 
 
 ## Job Submission for Whole Genome Imputation
-The API allows to submit imputation jobs and to set several parameters. For HLA imputation, please see below. 
+The API allows to submit imputation jobs and to set several parameters.
 
-### POST /jobs/submit/minimac4
+### POST /jobs/submit/imputationserver@2.0.0 
 
 The following parameters can be set:
 
@@ -29,22 +30,8 @@ The following parameters can be set:
 | build       | `hg19`<br> `hg38` | `hg19`  | |
 | r2Filter    | `0` <br> `0.001` <br> `0.1` <br> `0.2` <br> `0.3` | `0`  | |
 
-## Job Submission for HLA Imputation
-The API also allows to submit imputation jobs using the HLA application. Please note, that the population parameter can be skipped here. 
 
-### POST /jobs/submit/imputationserver-hla
 
-The following parameters can be set:
-
-| Parameter        | Values           | Default Value  |  Required  |
-| ------------- |:-------------| :-----|---|
-| files         | /path/to/file |  | **x** |
-| mode          | `qconly`<br> `phasing` <br> `imputation`     | `imputation`   | |
-| password      | user-defined password      |  auto generated and send by mail  | |
-| refpanel      | `multiethnic-hla-panel-Ggroup` <br>  `multiethnic-hla-panel-4digit` | - | **x** |
-| phasing     | `eagle`<br> `no_phasing`      |  `eagle`  | |
-| build       | `hg19`<br> `hg38` | `hg19`  | |
-| r2Filter    | `0` <br> `0.001` <br> `0.1` <br> `0.2` <br> `0.3` | `0`  | |
 
 
 ### Examples: curl

@@ -4,7 +4,7 @@ The complete Helmholtz Munich Imputation Server (HMIS) source code is available 
 
 ## Helmholtz Munich Imputation Server Team
 
-* [Dr.William Rayner](mailto:william.rayner@helmholtz-munich.de)
+* [Dr. William Rayner](mailto:william.rayner@helmholtz-munich.de)
 * [Andrei Barysenka](mailto:andrei.barysenka@helmholtz-munich.de)
 * [Anshika Chowdhary](mailto:anshika.chowdhary@helmholtz-munich.de)
 * [Young-Chan Park](mailto:young-chan.park@helmholtz-munich.de)

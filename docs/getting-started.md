@@ -56,7 +56,7 @@ If your uploaded data is *unphased*, Eagle v2.4 will be used for phasing. In cas
 
 |  Algorithm | Description |
 | ---------- |-------------|
-| **Eagle v2.4** | The [Eagle](https://data.broadinstitute.org/alkesgroup/Eagle/) algorithm estimates haplotype phase using the HRC reference panel. This method is also suitable for single sample imputation. After phasing or imputation you will receive phased genotypes in your VCF files. |
+| **Eagle v2.4** | The [Eagle](https://data.broadinstitute.org/alkesgroup/Eagle/) algorithm estimates haplotype phase using the user selected reference panel. This method is also suitable for single sample imputation. After phasing or imputation you will receive phased genotypes in your VCF files. |
 
 ### Population
 
@@ -64,14 +64,12 @@ Please select the population of your uploaded samples. This information is used 
 
 |  Population | Supported Reference Panels |
 | ----------- | ---------------------------|
-| **AFR** | all |
-| **AMR** | all |
-| **EUR** | all |
-| **Mixed** | all |
-| **AA** | CAAPA |
-| **ASN** | 1000 Genomes Phase 1 (Version 3) |
+| **AFR** | 1000 Genomes Phase 3 (Version 5) |
+| **AMR** | 1000 Genomes Phase 3 (Version 5) |
 | **EAS** | 1000 Genomes Phase 3 (Version 5) |
 | **SAS** | 1000 Genomes Phase 3 (Version 5) |
+| **EUR** | all |
+| **Mixed** | all |
 
 In case your population is not listed or your samples are from different populations, please select **Mixed** to skip the allele frequency check. For mixed populations, no QC-Report will be created.
 

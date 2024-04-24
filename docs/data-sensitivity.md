@@ -7,14 +7,11 @@ Since data is transfered to our server located in Munich, a wide array of securi
 - We only store the number of samples and markers analyzed, we don't ever "look" at your data in anyway.
 - All results are encrypted with a strong one-time password - thus, only you can read them.
 - After imputation is finished, the data uploader has 7 days to use an encrypted connection to get results back.
-- The complete source code is available in a [public Github repository](https://github.com/genepi/imputationserver/tree/qc-refactoring).
 
 ## Who has access?
-
 To upload and download data, users must register with a unique e-mail address and strong password. Each user can only download imputation results for samples that they have themselves uploaded; no other imputation server users will be able to access your data.
 
 ## Cookies
- 
 We value your privacy and are committed to transparency regarding the use of cookies on our website. Below, we outline our cookie policy to provide you with clarity and assurance.
 
 ### What are cookies?
@@ -31,7 +28,7 @@ Cookies are essential for providing seamless login experiences to our users. By 
 
 A wide array of security measures are in force on the imputation servers:
 
-- The servers are within a private network behind a firewall, and direct access is only possible within the private network.
+- The servers are within a private network behind a firewall, and direct access is only possible from within the private network.
 - SSH login to the servers is restricted to only systems administrators.
 - Direct root login via SSH is not allowed.
 - On imputation server itself, updates are run regularly by systems administrators who follow several zero-day computer security announcement lists; and Denyhosts is used to thwart brute-force SSH login attacks.

@@ -1,6 +1,6 @@
 # Contact
 
-The complete Helmholtz Munich Imputation Server (HMIS) source code is available on [GitHub](https://github.com/hmgu-itg/imputationserver). Feel free to create issues and pull requests. Before contacting us, please have a look at the [FAQ page](/faq) first. 
+The complete Helmholtz Munich Imputation Server (HMIS) source code is available on [GitHub](https://github.com/hmgu-itg/imputationserver). Feel free to create issues and pull requests. Before contacting us, please have a look at the [FAQ page](./faq.md) first. 
 
 ## Helmholtz Munich Imputation Server Team
 

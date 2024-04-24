@@ -38,7 +38,7 @@ After you have confirmed your choice, all selected files are listed in the submi
 
 ![](images/images_new/data_inout.png)
 
-Please make sure that all files fulfill the [requirements](/prepare-your-data).
+Please make sure that all files fulfill the [requirements](./prepare-your-data.md).
 
 
 !!! important
@@ -103,7 +103,7 @@ After Input Validation has finished, basic statistics can be viewed directly in 
 
 ![](images/Job_summary.png)
 
-If you encounter problems with your data please read this tutorial about [Data Preparation](/prepare-your-data) to ensure your data is in the correct format.
+If you encounter problems with your data please read this tutorial about [Data Preparation](./prepare-your-data.md) to ensure your data is in the correct format.
 
 ### Quality Control
 
@@ -116,7 +116,7 @@ In this step we check each variant and exclude it in case of:
 5. allele mismatch between reference panel and uploaded data
 6. SNP call rate < 90%
 
-All filtered variants are listed in a file called `statistics.txt` which can be downloaded by clicking on the provided link. More informations about our QC pipeline can be found [here](/pipeline).
+All filtered variants are listed in a file called `statistics.txt` which can be downloaded by clicking on the provided link. More informations about our QC pipeline can be found [here](./pipeline.md).
 
 ![](images/quality-control02.png)
 

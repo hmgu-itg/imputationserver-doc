@@ -181,40 +181,39 @@ curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/
 
 
 ```json
-[
-  {
-    "applicationId":"minimac",
-    "executionTime":0,
-    "id":"job-20160504-155023",
-    "name":"job-20160504-155023",
-    "positionInQueue":0,
-    "running":false,
-    "state":5
-  },{
-    "applicationId":"minimac",
-    "executionTime":0,
-    "id":"job-20160420-145809",
-    "name":"job-20160420-145809",
-    "positionInQueue":0,
-    "running":false,
-    "state":5
-  },{
-    "applicationId":"minimac",
-    "executionTime":0,
-    "id":"job-20160420-145756",
-    "name":"job-20160420-145756",
-    "positionInQueue":0,
-    "running":false,
-    "state":5
-  }
-]
+{
+    "count":1,
+    "page":1,
+    "pages":[1],
+    "data": [{
+         "app":null,
+         "application":"Genotype Imputation (Minimac4), 2.0.0 2.0.0",
+         "canceld":false,
+         "complete":true,
+         "currentTime":1714036281474,
+         "endTime":1714034450468,
+         "finishedOn":1714034451414,
+         "id":"job-20240425-103410-874",
+         "name":"test_api_token",
+         "positionInQueue":-1,
+         "priority":0,
+         "progress":-1,
+         "setupEndTime":1714034091801,
+         "setupRunning":false,
+         "setupStartTime":1714034051089,
+         "startTime":1714034095135,
+         "state":5,
+         "submittedOn":1714034051037,
+         "workspaceSize":""
+  }]
+}
 ```
 
 ### Example: Python
 
 ```python
-import requests
 import json
+import requests
 
 # imputation server url
 url = 'https://imputationserver.helmholtz-munich.de/api/v2'
@@ -229,10 +228,36 @@ if r.status_code != 200:
     raise Exception('GET /jobs/ {}'.format(r.status_code))
 
 # print all jobs
-for job in r.json():
-    print('{} [{}]'.format(job['id'], job['state']))
+jobs = r.json()
+for job in jobs['data']:
+    print(json.dumps(job, indent=4))
 ```
 
+
+```json
+
+{
+    "app": null,
+    "application": "Genotype Imputation (Minimac4), 1.6.8 1.6.8",
+    "canceld": false,
+    "complete": true,
+    "currentTime": 1714040218658,
+    "endTime": 0,
+    "finishedOn": 1714038005353,
+    "id": "job-20240425-113941-495",
+    "name": "test_api_token1",
+    "positionInQueue": -1,
+    "priority": 0,
+    "progress": -1,
+    "setupEndTime": 1714038002250,
+    "setupRunning": false,
+    "setupStartTime": 1714037981736,
+    "startTime": 0,
+    "state": 5,
+    "submittedOn": 1714037981658,
+    "workspaceSize": ""
+}
+```
 ## Monitor Job Status
 
 ### /jobs/{id}/status
@@ -245,6 +270,7 @@ Command:
 TOKEN="YOUR-API-TOKEN"
 
 curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20240425-090137-703/status
+
 ```
 
 Response:
@@ -252,23 +278,90 @@ Response:
 ```json
 
 {
-  "application":"Helmholtz Munich Imputation Server (Minimac4) 1.5.8",
-  "applicationId":"minimac4",
-  "deletedOn":-1,
-  "endTime":1462369824173,
-  "executionTime":0,
-  "id":"job-20160504-155023",
-  "logs":"",
-  "name":"job-20160504-155023",
-  "outputParams":[],
-  "positionInQueue":0,
-  "running":false,
-  "startTime":1462369824173,
-  "state":5
-  ,"steps":[]
+    "app": null,
+    "application": "Genotype Imputation (Minimac4), 2.0.0 2.0.0",
+    "applicationId": "imputationserver@2.0.0",
+    "canceld": false,
+    "complete": true,
+    "currentTime": 1714040634188,
+    "deletedOn": -1,
+    "endTime": 1714034450468,
+    "finishedOn": 1714034451414,
+    "id": "job-20240425-103410-874",
+    "logs": "",
+    "name": "test_api_token",
+    "outputParams": [],
+    "positionInQueue": -1,
+    "priority": 0,
+    "progress": -1,
+    "running": false,
+    "setupEndTime": 1714034091801,
+    "setupRunning": false,
+    "setupStartTime": 1714034051089,
+    "startTime": 1714034095135,
+    "state": 5,
+    "steps": [],
+    "submittedOn": 1714034051037,
+    "workspaceSize": ""
 }
 
+
 ```
+
+### Example: Python
+
+```python
+import requests
+import json
+
+# imputation server url
+url = 'https://imputationserver.helmholtz-munich.de/api/v2'
+token = "YOUR-API-TOKEN"
+job_id = 'job-20240425-103410-874'
+
+# add token to header (see authentication)
+headers = {'X-Auth-Token' : token}
+
+# get all jobs
+r = requests.get(url + "/jobs/{}/status".format(job_id), headers=headers)
+if r.status_code != 200:
+    raise Exception('GET /jobs/{}/status {}'.format(job_id, r.status_code))
+
+print(json.dumps(r.json(), indent=4))
+
+```
+
+```json
+{
+    "app": null,
+    "application": "Genotype Imputation (Minimac4), 2.0.0 2.0.0",
+    "applicationId": "imputationserver@2.0.0",
+    "canceld": false,
+    "complete": true,
+    "currentTime": 1714040634188,
+    "deletedOn": -1,
+    "endTime": 1714034450468,
+    "finishedOn": 1714034451414,
+    "id": "job-20240425-103410-874",
+    "logs": "",
+    "name": "test_api_token",
+    "outputParams": [],
+    "positionInQueue": -1,
+    "priority": 0,
+    "progress": -1,
+    "running": false,
+    "setupEndTime": 1714034091801,
+    "setupRunning": false,
+    "setupStartTime": 1714034051089,
+    "startTime": 1714034095135,
+    "state": 5,
+    "steps": [],
+    "submittedOn": 1714034051037,
+    "workspaceSize": ""
+}
+```
+
+
 
 ## Monitor Job Details
 
@@ -281,11 +374,29 @@ TOKEN="YOUR-API-TOKEN"
 
 curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20240425-090137-703/
 ```
+### Example: Python
 
+```python
+# imputation server url
+url = 'https://imputationserver.helmholtz-munich.de/api/v2'
+token = "YOUR-API-TOKEN"
+job_id = 'job-20240425-103410-874'
+
+# add token to header (see authentication)
+headers = {'X-Auth-Token' : token}
+
+# get all jobs
+r = requests.get(url + "/jobs/{}".format(job_id), headers=headers)
+if r.status_code != 200:
+    raise Exception('GET /jobs/{} {}'.format(job_id, r.status_code))
+
+print(json.dumps(r.json(), indent=4))
+
+```
 
 ## Cancel Job
 
-### /jobs/{id}/cancel"
+### /jobs/{id}/cancel
 
 ### Example: curl
 
@@ -293,20 +404,27 @@ curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/
 TOKEN="YOUR-API-TOKEN"
 
 curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20240425-090137-703/cancel
+```
 
+### Example: Python
+
+```python
+# imputation server url
+url = 'https://imputationserver.helmholtz-munich.de/api/v2'
+token = "YOUR-API-TOKEN"
+job_id = 'job-20240425-103410-874'
+
+# add token to header (see authentication)
+headers = {'X-Auth-Token' : token}
+
+# get all jobs
+r = requests.get(url + "/jobs/{}/cancel".format(job_id), headers=headers)
+if r.status_code != 200:
+    raise Exception('GET /jobs/{}/cancel {}'.format(job_id, r.status_code))
+
+print(json.dumps(r.json(), indent=4))
 ```
 
 
 
-## Restart Job
 
-### /jobs/{id}/restart"
-
-### Example: curl
-
-```sh
-TOKEN="YOUR-API-TOKEN"
-
-curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20240425-090137-703/restart
-
-```

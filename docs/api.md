@@ -1,12 +1,12 @@
 # API Reference
 
-The REST APIs provide programmatic ways to submit new jobs and to download data from Munich Imputation Server. It identifies users using authentication tokens, responses are provided in JSON format.
+The REST APIs provide programmatic ways to submit new jobs and to download data from Helmholtz Munich Imputation Server. It identifies users using authentication tokens, responses are provided in JSON format.
 
 
 ## Authentication
-Munich Imputation Server uses a token-based authentication. The token is required for all future interaction with the server. The token can be created and downloaded from your user profile (username -> Profile):
+Helmholtz Munich Imputation Server uses a token-based authentication. The token is required for all future interaction with the server. The token can be created and downloaded from your user profile (username -> Profile):
 
-#update image after testing
+
 ![Activate API](https://raw.githubusercontent.com/genepi/imputationserver-docker/master/images/api.png)
 
 For security reasons, Api Tokens are valid for 30 days. You can check the status in the web interface.
@@ -24,7 +24,7 @@ The following parameters can be set:
 | files         | /path/to/file |  | **x** |
 | mode          | `qconly`<br> `phasing` <br> `imputation`     | `imputation`   | |
 | password      | user-defined password      |  auto generated and send by mail  | |
-| refpanel      | `hrc-r1.1` <br> `1000g-phase-3-v5` <br>  `gasp-v2` <br>  `genome-asia-panel`  <br> `1000g-phase-1` <br> `cappa` <br> `hapmap-2` | - | **x** |
+| refpanel      | `1000g-phase-3-v5`   <br>  `hapmap-2` <br>  | - | **x** |
 | phasing     | `eagle`<br> `no_phasing`      |  `eagle`  | |
 | population  | `eur`<br> `afr`<br> `asn`<br> `amr`<br> `sas`<br> `eas`<br> `AA`<br> `mixed` <br> `all`   |  -  | **x** |
 | build       | `hg19`<br> `hg38` | `hg19`  | |
@@ -46,7 +46,7 @@ Command:
 ```sh
 TOKEN="YOUR-API-TOKEN";
 
-curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/minimac4 \
+curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.0.0 \
   -H "X-Auth-Token: $TOKEN" \
   -F "files=@/path-to/file.vcf.gz" \
   -F "refpanel=1000g-phase-3-v5" \
@@ -56,12 +56,14 @@ curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/minimac4 \
 Response:
 
 ```json
+
 {
-  "id":"job-20160504-161420",
-  "message":"Your job was successfully added to the job queue.",
-  "success":true
+"success":true,
+"id":"job-20240425-001551-097",
+"message":"Your job was successfully added to the job queue."
 }
 ```
+
 
 #### Submit multiple files
 
@@ -72,7 +74,7 @@ Command:
 ```sh
 TOKEN="YOUR-API-TOKEN";
 
-curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/minimac4 \
+curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.0.0 \
   -H "X-Auth-Token: $TOKEN" \
   -F "files=@/path-to/file1.vcf.gz" \
   -F "files=@/path-to/file2.vcf.gz" \
@@ -91,92 +93,71 @@ Response:
 ```
 
 
-#### Submit file from a HTTP(S)
 
-Submits files from https with HRC reference panel and quality control.
 
-Command:
-
-```sh
-TOKEN="YOUR-API-TOKEN";
-
-curl  https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/minimac4 \
-  -H "X-Auth-Token: $TOKEN" \
-  -F "files=https://imputationserver.helmholtz-munich.de/static/downloads/hapmap300.chr1.recode.vcf.gz" \
-  -F "files-source=http" \
-  -F "refpanel=hrc-r1.1" \
-  -F "population=eur" \
-  -F "mode=qconly"
-```
-
-Response:
-
-```json
-{
-  "id":"job-20120504-155023",
-  "message":"Your job was successfully added to the job queue.",
-  "success":true
-}
-```
 
 
 ### Examples: Python
 
 #### Submit single vcf file
-
 ```python
 import requests
-import json
 
-# imputation server url
 url = 'https://imputationserver.helmholtz-munich.de/api/v2'
-token = 'YOUR-API-TOKEN';
+token = 'YOUR-API-TOKEN'
 
-# add token to header (see Authentication)
-headers = {'X-Auth-Token' : token }
 data = {
-  'refpanel': '1000g-phase-3-v5',
-  'population': 'eur'
+    'job-name': "test_api_token",
+    'refpanel': '1000g-phase-3-v5',
+    'build': 'hg19',
+    'population': 'eur'
 }
+
+headers = {'X-Auth-Token' : token}
 
 # submit new job
 vcf = '/path/to/genome.vcf.gz';
 files = {'files' : open(vcf, 'rb')}
-r = requests.post(url + "/jobs/submit/minimac4", files=files, data=data, headers=headers)
+r = requests.post(url + '/jobs/submit/imputationserver@2.0.0',
+                  files=files, data=data, headers=headers)
+
 if r.status_code != 200:
   print(r.json()['message'])
-  raise Exception('POST /jobs/submit/minimac4 {}'.format(r.status_code))
+  raise Exception('POST /jobs/submit/imputationserver@2.0.0 {}'.format(r.status_code))
 
 # print response and job id
 print(r.json()['message'])
 print(r.json()['id'])
 ```
 
+
 #### Submit multiple vcf files
 
 ```python
 import requests
-import json
 
-# imputation server url
-url = 'https://imputationserver.helmholtz-munich.de/api/v2'
-token = 'YOUR-API-TOKEN';
+url = 'https://imputationserver.helmholtz-munich.de/api/v2/'
+token = 'YOUR-API-TOKEN'
 
-# add token to header (see Authentication)
-headers = {'X-Auth-Token' : token }
 data = {
-  'refpanel': '1000g-phase-3-v5',
-  'population': 'eur'
+    'job-name': "test_api_token",
+    'refpanel': '1000g-phase-3-v5',
+    'build': 'hg19',
+    'population': 'eur'
 }
+
+headers = {'X-Auth-Token' : token}
 
 # submit new job
 vcf = '/path/to/file1.vcf.gz';
 vcf1 = '/path/to/file2.vcf.gz';
 files = [('files', open(vcf, 'rb')), ('files', open(vcf1, 'rb'))]
-r = requests.post(url + "/jobs/submit/minimac4", files=files, data=data, headers=headers)
+r = requests.post(url + 'jobs/submit/imputationserver@2.0.0',
+                  files=files, data=data, headers=headers)
+
 if r.status_code != 200:
   print(r.json()['message'])
-  raise Exception('POST /jobs/submit/minimac4 {}'.format(r.status_code))
+  raise Exception('POST /jobs/submit/imputationserver@2.0.0 {}'.format(r.status_code))
 
 # print message
 print(r.json()['message'])
@@ -198,7 +179,6 @@ TOKEN="YOUR-API-TOKEN";
 curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs
 ```
 
-Response:
 
 ```json
 [
@@ -241,7 +221,7 @@ url = 'https://imputationserver.helmholtz-munich.de/api/v2'
 token = 'YOUR-API-TOKEN'
 
 # add token to header (see authentication)
-headers = {'X-Auth-Token' : token }
+headers = {'X-Auth-Token' : token}
 
 # get all jobs
 r = requests.get(url + "/jobs", headers=headers)
@@ -262,14 +242,15 @@ for job in r.json():
 Command:
 
 ```sh
-TOKEN="YOUR-API-TOKEN";
+TOKEN="YOUR-API-TOKEN"
 
-curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20160504-155023/status
+curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20240425-090137-703/status
 ```
 
 Response:
 
 ```json
+
 {
   "application":"Helmholtz Munich Imputation Server (Minimac4) 1.5.8",
   "applicationId":"minimac4",
@@ -286,6 +267,7 @@ Response:
   "state":5
   ,"steps":[]
 }
+
 ```
 
 ## Monitor Job Details
@@ -295,7 +277,36 @@ Response:
 ### Example: curl
 
 ```sh
-TOKEN="YOUR-API-TOKEN";
+TOKEN="YOUR-API-TOKEN"
 
-curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20160504-155023/
+curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20240425-090137-703/
+```
+
+
+## Cancel Job
+
+### /jobs/{id}/cancel"
+
+### Example: curl
+
+```sh
+TOKEN="YOUR-API-TOKEN"
+
+curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20240425-090137-703/cancel
+
+```
+
+
+
+## Restart Job
+
+### /jobs/{id}/restart"
+
+### Example: curl
+
+```sh
+TOKEN="YOUR-API-TOKEN"
+
+curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/v2/jobs/job-20240425-090137-703/restart
+
 ```

@@ -22,6 +22,7 @@ The following options are available:
 
 Our server offers genotype imputation from different reference panels. Please select one that fulfills your needs and supports the population of your input data:
 
+- HRC (Version r1.1 2016)
 - 1000 Genomes Phase 3 (Version 5)
 - HapMap 2
 

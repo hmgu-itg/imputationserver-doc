@@ -4,14 +4,15 @@ The complete Helmholtz Munich Imputation Server (HMIS) source code is available 
 
 ## Helmholtz Munich Imputation Server Team
 
+Helmholtz Munich Imputation Server provides a free genotype imputation service using Minimac4. You can upload phased or unphased GWAS genotypes and receive phased and imputed genomes in return. For all uploaded data sets an extensive QC is performed. Unless you need to contact any specific person, please contact us using the support contact address.
+
+* [Support contact](mailto:support@imputationserver.helmholtz-munich.de)
 * [Dr. William Rayner](mailto:william.rayner@helmholtz-munich.de)
 * [Andrei Barysenka](mailto:andrei.barysenka@helmholtz-munich.de)
 * [Anshika Chowdhary](mailto:anshika.chowdhary@helmholtz-munich.de)
 * [Young-Chan Park](mailto:young-chan.park@helmholtz-munich.de)
 
 ## Michigan Imputation Server Team
-
-Michigan Imputation Server provides a free genotype imputation service using Minimac4. You can upload phased or unphased GWAS genotypes and receive phased and imputed genomes in return. For all uploaded data sets an extensive QC is performed.
 
 * [Christian Fuchsberger](mailto:cfuchsb@umich.edu)
 * [Lukas Forer](mailto:lukas.forer@i-med.ac.at)

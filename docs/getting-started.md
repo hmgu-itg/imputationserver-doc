@@ -130,7 +130,8 @@ If imputation was successful, we compress and encrypt your data and send you a r
 
 ![](images/compression01.png)
 
-This password is not stored on our server at any time. Therefore, if you lost the password, there is no way to resend it to you.
+This password is not stored on our server at any time. Therefore, if you lose the password, there is no way to resend it to you.
+
 
 ## Download results
 

@@ -4,12 +4,12 @@ Our server offers imputation from the following reference panels:
 
 ## HRC (Version r1.1 2016)
 
-The HRC panel consists of 64,940 haplotypes of predominantly European ancestry.
+The HRC panel consists of haplotypes of predominantly European ancestry.
 
 | ||
 | | |
-| Number of Samples | 32,470 |
-| Sites (chr1-22) | 39,635,008 |
+| Number of Samples | 27,165 |
+| Sites (chr1-22) | 40,405,505 |
 | Chromosomes | 1-22, X|
 | Website | [http://www.haplotype-reference-consortium.org](http://www.haplotype-reference-consortium.org); [HRC r1.1 Release Note](https://imputationserver.sph.umich.edu/start.html#!pages/hrc-r1.1) |
 

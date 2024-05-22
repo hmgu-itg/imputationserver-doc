@@ -76,7 +76,7 @@ Please select if you want to run **Quality Control & Imputation**, **Quality Con
 
 ### AES 256 encryption
 
-All Imputation Server results are encrypted by default. Please tick this checkbox if you want to use AES 256 encryption instead of the default encryption method. Please note that AES encryption does not work with standard unzip programs. We recommend to use 7z instead.
+All Imputation Server results are encrypted by default by the ZIP standard algorithm. Please tick this checkbox if you want to use AES 256 encryption instead of the default encryption method.  Please note that AES encryption does not work with standard unzip programs. We recommend to use 7z instead.
 
 
 ## Start your imputation job

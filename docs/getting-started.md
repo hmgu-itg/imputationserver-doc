@@ -157,3 +157,44 @@ In order to download results via the commandline using `wget`or `aria2` you need
 A new dialog appears which provides you all the private link. Click on the tab **wget command** to get a copy & paste ready command that can be used on Linux or MacOS to download the files individually in your terminal.
 
 The command for downloading all results at once is also provided, which you can also copy & paste to your terminal to initiate the download. 
+
+
+### Decrypting the results
+
+An email containing the password to decrypt your results is sent to your email address upon the completion of the imputation job.
+
+![](images/job-complete-email.png)
+
+If AES 256 encryption was not selected during job submission, the results can be decrypted with standard unzip programs. A password prompt will appear when trying to unzip the results file, where the password provided in the email can be used to decrypt and uncompress the results.
+
+**Unzipping in shell**  
+```sh
+$ unzip chr_22.zip 
+Archive:  chr_22.zip
+[chr_22.zip] chr22.info.gz password:
+```
+
+**Unzipping in Windows**  
+![](images/unzip-password-windows.png)
+
+
+If you selected AES 256 encryption, standard zip programs won't be able to decrypt the results, and you'll need to use a program like [7-Zip](https://www.7-zip.org/). Below is an example of using the command line version of 7-Zip.
+
+```sh
+$ 7z x chr_22.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=C.UTF-8,Utf16=on,HugeFiles=on,64 bits,12 CPUs Intel(R) Xeon(R) E-2176M  CPU @ 2.70GHz (906EA),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 2333823025 bytes (2226 MiB)
+
+Extracting archive: chr_22.zip
+--
+Path = chr_22.zip
+Type = zip
+Physical Size = 2333823025
+
+    
+Enter password (will not be echoed):
+```

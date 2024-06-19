@@ -41,7 +41,7 @@ Please make sure that all files fulfill the [requirements](./prepare-your-data.m
     Since version 1.7.2 URL-based uploads (sftp and http) are no longer supported. Please use direct file uploads instead. 
 
 ### Build
-Please select the build of your data. Currently the options **hg19** and **hg38** are supported. the Helmholtz Munich Imputation Server automatically updates the genome positions (liftOver) of your data. All reference panels except TOPMed are based on hg19 coordinates.
+Please select the build of your data. Currently the options **hg19** and **hg38** are supported. the Helmholtz Munich Imputation Server automatically updates the genome positions (liftOver) of your data. All reference panels  are based on hg19 coordinates.
 
 ### rsq Filter
 To minimize the file size, the Helmholtz Munich Imputation Server includes a r<sup>2</sup> filter option, excluding all imputed SNPs with a r<sup>2</sup>-value (= imputation quality) smaller then the specified value.
@@ -76,7 +76,7 @@ Please select if you want to run **Quality Control & Imputation**, **Quality Con
 
 ### AES 256 encryption
 
-All Imputation Server results are encrypted by default. Please tick this checkbox if you want to use AES 256 encryption instead of the default encryption method. Please note that AES encryption does not work with standard unzip programs. We recommend to use 7z instead.
+All Imputation Server results are encrypted by default by the ZIP standard algorithm. Please tick this checkbox if you want to use AES 256 encryption instead of the default encryption method.  Please note that AES encryption does not work with standard unzip programs. We recommend to use 7z instead.
 
 
 ## Start your imputation job
@@ -130,7 +130,8 @@ If imputation was successful, we compress and encrypt your data and send you a r
 
 ![](images/compression01.png)
 
-This password is not stored on our server at any time. Therefore, if you lost the password, there is no way to resend it to you.
+This password is not stored on our server at any time. Therefore, if you lose the password, there is no way to resend it to you.
+
 
 ## Download results
 

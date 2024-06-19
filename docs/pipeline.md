@@ -9,9 +9,9 @@ Our pipeline performs the following steps:
 
     **On Chunk level:**
 
-    *   Determine amount of valid variants: A variant is valid iff it is included in the reference panel. At least 3 variants must be included.
-    *   Determine amount of variants found in the reference panel: At least 50 % of the variants must be be included in the reference panel.
-    *   Determine sample call rate: At least 50 % of the variants must be called for each sample.  
+    *   Determine the number of valid variants: A variant is valid iff it is included in the reference panel. At least 3 variants must be included.
+    *   Determine the number of variants found in the reference panel: At least 50 % of the variants must be be included in the reference panel.
+    *   Determine the sample call rate: At least 50 % of the variants must be called for each sample.  
 
     Chunk exclusion: if (#variants < 3 || overlap < 50% || sampleCallRate < 50%)
 
@@ -59,14 +59,7 @@ Our pipeline performs the following steps:
 --window 500000 --prefix chunk_1_0000000001_0020000000 --cpus 1 --chr 20 --noPhoneHome
 --format GT,DS,GP --allTypedSites --meta --minRatio 0.00001
 ````
-If a map file is available (currently TOPMed only), the following cmd is executed:
 
-````sh
-./Minimac4 --refHaps HRC.r1-1.GRCh38.chr1.shapeit3.mac5.aa.genotypes.m3vcf.gz
---haps chunk_1_0000000001_0020000000.phased.vcf --start 1 --end 20000000
---window 500000 --prefix chunk_1_0000000001_0020000000 --cpus 1 --chr 20 --noPhoneHome
---format GT,DS,GP --allTypedSites --meta --minRatio 0.00001 --referenceEstimates --map B38_MAP_FILE.map
-````
 
 ## Compression and Encryption
 

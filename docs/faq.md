@@ -9,8 +9,10 @@ Please check the following points: (1) When selecting AES256 encryption, please 
 ## Extending expiration date or reset download counter
 Your data are available for 7 days. In case you need an extension, please let [us](https://imputationserver-doc.readthedocs.io/en/latest/contact/) know.
 
+<!--
 ## How can I improve the download speed?
 [aria2](https://aria2.github.io/) tries to utilize your maximum download bandwidth. Please keep in mind to raise the k parameter significantly (-k, --min-split-size=SIZE). You will otherwise hit the HMIS download limit for each file (thanks to Anthony Marcketta for point this out).
+-->
 
 <!---
 ## Can I download all results at once?

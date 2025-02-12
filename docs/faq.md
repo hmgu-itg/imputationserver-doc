@@ -18,7 +18,7 @@ We provide wget command for all results. Please open the results tab. The last c
 --->
 
 ## How can I download my results ?
-We provide wget and curl commands for all results. Please open the results tab. The last column in each row includes direct links to all files.
+We provide **wget** and **curl** commands for downloading imputation results. Please open the **Results** tab, the last column in each row includes direct links to all files.
 **Note**: you can only run at most two simultaneous downloads.
 
 

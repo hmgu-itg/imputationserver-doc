@@ -12,8 +12,15 @@ Your data are available for 7 days. In case you need an extension, please let [u
 ## How can I improve the download speed?
 [aria2](https://aria2.github.io/) tries to utilize your maximum download bandwidth. Please keep in mind to raise the k parameter significantly (-k, --min-split-size=SIZE). You will otherwise hit the HMIS download limit for each file (thanks to Anthony Marcketta for point this out).
 
+<!---
 ## Can I download all results at once?
 We provide wget command for all results. Please open the results tab. The last column in each row includes direct links to all files.
+--->
+
+## How can I download my results ?
+We provide wget and curl commands for all results. Please open the results tab. The last column in each row includes direct links to all files.
+**Note**: you can only run at most two simultaneous downloads.
+
 
 ## Your web service looks great. Can I set up my own web service as well?
 All web service functionality is provided by [Cloudgene](http://www.cloudgene.io/). Please contact us, in case you want to set up your own service.

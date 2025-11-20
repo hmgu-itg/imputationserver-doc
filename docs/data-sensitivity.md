@@ -2,11 +2,16 @@
 
 Since data are transfered to our server located in Munich, a wide array of security measures are in force:
 
+- To increase security users have an option to use Google Authenticator one time password, in addition to normal password when they sign up
 - The complete interaction with the server is secured with HTTPS.
 - Input data are deleted from our servers as soon it is not needed anymore.
 - We only store the number of samples and markers analyzed, we don't ever "look" at your data in any way.
 - All results are encrypted with a strong one-time password - thus, only you can read them.
 - After imputation is finished, the data uploader has 7 days to use an encrypted connection to get results back.
+
+# System Security
+
+The Imputation Server nodes run the latest Ubuntu OS, which is updated regularly. Access to the nodes of the Imputation Server is only possible via SSH to the head node, which in turn is placed behind HMGU jump server. Only HMGU employees have access to the jump server. SSH connection to the Imputation Server head node is disabled for the admin user, normal users allowed to connect to the head node must use Google Authenticator one time password in addition to SSH password. The OS on the head node is monitored by **accct** service. SSH is configured to use PAM.
 
 ## Who has access?
 To upload and download data, users must register with a unique e-mail address and strong password. Each user can only download imputation results for samples that they have themselves uploaded; no other imputation server users will be able to access your data.

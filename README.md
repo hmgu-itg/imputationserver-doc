@@ -18,5 +18,4 @@ Use `virtualenv` or `conda` if needed.
 ## Maintainers
 - Dr. William Rayner
 - Andrei Barysenka
-- Anshika Chowdhary
-- Young-Chan Park
+

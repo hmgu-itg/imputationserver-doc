@@ -157,7 +157,7 @@ r = requests.post(url + 'jobs/submit/imputationserver@2.1.9',
 
 if r.status_code != 200:
   print(r.json()['message'])
-  raise Exception('POST /jobs/submit/imputationserver@2.0.0 {}'.format(r.status_code))
+  raise Exception('POST /jobs/submit/imputationserver@2.1.9 {}'.format(r.status_code))
 
 # print message
 print(r.json()['message'])
@@ -187,7 +187,7 @@ curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/
     "pages":[1],
     "data": [{
          "app":null,
-         "application":"Genotype Imputation (Minimac4), 2.0.0 2.0.0",
+         "application":"Genotype Imputation (Minimac4), 2.1.9 2.1.9",
          "canceld":false,
          "complete":true,
          "currentTime":1714036281474,
@@ -279,8 +279,8 @@ Response:
 
 {
     "app": null,
-    "application": "Genotype Imputation (Minimac4), 2.0.0 2.0.0",
-    "applicationId": "imputationserver@2.0.0",
+    "application": "Genotype Imputation (Minimac4), 2.1.9 2.1.9",
+    "applicationId": "imputationserver@2.1.9",
     "canceld": false,
     "complete": true,
     "currentTime": 1714040634188,
@@ -334,8 +334,8 @@ print(json.dumps(r.json(), indent=4))
 ```json
 {
     "app": null,
-    "application": "Genotype Imputation (Minimac4), 2.0.0 2.0.0",
-    "applicationId": "imputationserver@2.0.0",
+    "application": "Genotype Imputation (Minimac4), 2.1.9 2.1.9",
+    "applicationId": "imputationserver@2.1.9",
     "canceld": false,
     "complete": true,
     "currentTime": 1714040634188,

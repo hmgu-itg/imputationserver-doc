@@ -15,7 +15,7 @@ For security reasons, Api Tokens are valid for 30 days. You can check the status
 ## Job Submission for Whole Genome Imputation
 The API allows to submit imputation jobs and to set several parameters.
 
-### POST /jobs/submit/imputationserver@2.0.0 
+### POST /jobs/submit/imputationserver@2.1.9 
 
 The following parameters can be set:
 
@@ -24,9 +24,9 @@ The following parameters can be set:
 | files         | /path/to/file |  | **x** |
 | mode          | `qconly`<br> `phasing` <br> `imputation`     | `imputation`   | |
 | password      | user-defined password      |  auto generated and send by mail  | |
-| refpanel      | `1000g-phase-3-v5`   <br>  `hapmap-2` <br>  | - | **x** |
+| refpanel      | `1000g-phase-3-v5`   <br>  `hapmap-2` <br>  `hrc-r1-1-msav` <br>| - | **x** |
 | phasing     | `eagle`<br> `no_phasing`      |  `eagle`  | |
-| population  | `eur`<br> `afr`<br> `asn`<br> `amr`<br> `sas`<br> `eas`<br> `AA`<br> `mixed` <br> `all`   |  -  | **x** |
+| population  | `eur`<br> `afr`<br> `asn`<br> `amr`<br> `sas`<br> `eas`<br> `AA`<br> `mixed` <br> `all` <br>  `skip` |  -  | **x** |
 | build       | `hg19`<br> `hg38` | `hg19`  | |
 | r2Filter    | `0` <br> `0.001` <br> `0.1` <br> `0.2` <br> `0.3` | `0`  | |
 
@@ -46,7 +46,7 @@ Command:
 ```sh
 TOKEN="YOUR-API-TOKEN";
 
-curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.0.0 \
+curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.1.9 \
   -H "X-Auth-Token: $TOKEN" \
   -F "files=@/path-to/file.vcf.gz" \
   -F "refpanel=1000g-phase-3-v5" \
@@ -74,7 +74,7 @@ Command:
 ```sh
 TOKEN="YOUR-API-TOKEN";
 
-curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.0.0 \
+curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.1.9 \
   -H "X-Auth-Token: $TOKEN" \
   -F "files=@/path-to/file1.vcf.gz" \
   -F "files=@/path-to/file2.vcf.gz" \
@@ -118,12 +118,12 @@ headers = {'X-Auth-Token' : token}
 # submit new job
 vcf = '/path/to/genome.vcf.gz';
 files = {'files' : open(vcf, 'rb')}
-r = requests.post(url + '/jobs/submit/imputationserver@2.0.0',
+r = requests.post(url + '/jobs/submit/imputationserver@2.1.9',
                   files=files, data=data, headers=headers)
 
 if r.status_code != 200:
   print(r.json()['message'])
-  raise Exception('POST /jobs/submit/imputationserver@2.0.0 {}'.format(r.status_code))
+  raise Exception('POST /jobs/submit/imputationserver@2.1.9 {}'.format(r.status_code))
 
 # print response and job id
 print(r.json()['message'])
@@ -152,7 +152,7 @@ headers = {'X-Auth-Token' : token}
 vcf = '/path/to/file1.vcf.gz';
 vcf1 = '/path/to/file2.vcf.gz';
 files = [('files', open(vcf, 'rb')), ('files', open(vcf1, 'rb'))]
-r = requests.post(url + 'jobs/submit/imputationserver@2.0.0',
+r = requests.post(url + 'jobs/submit/imputationserver@2.1.9',
                   files=files, data=data, headers=headers)
 
 if r.status_code != 200:

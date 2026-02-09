@@ -24,7 +24,7 @@ The following parameters can be set:
 | files         | /path/to/file |  | **x** |
 | mode          | `qconly`<br> `phasing` <br> `imputation`     | `imputation`   | |
 | password      | user-defined password      |  auto generated and send by mail  | |
-| refpanel      | `1000g-phase-3-v5`   <br>  `hapmap-2` <br>  `hrc-r1-1-msav` <br>| - | **x** |
+| refpanel      | `1000g-phase-3-v5@2.1.1`   <br>  `hapmap-2@2.0.1` <br>  `hrc-r1-1-msav@1.1` <br> `1000g-phase-3-v5-hg38@2.0.0` <br>| - | **x** |
 | phasing     | `eagle`<br> `no_phasing`      |  `eagle`  | |
 | population  | `eur`<br> `afr`<br> `asn`<br> `amr`<br> `sas`<br> `eas`<br> `AA`<br> `mixed` <br> `all` <br>  `skip` |  -  | **x** |
 | build       | `hg19`<br> `hg38` | `hg19`  | |
@@ -49,7 +49,7 @@ TOKEN="YOUR-API-TOKEN";
 curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.1.9 \
   -H "X-Auth-Token: $TOKEN" \
   -F "files=@/path-to/file.vcf.gz" \
-  -F "refpanel=1000g-phase-3-v5" \
+  -F "refpanel=1000g-phase-3-v5@2.1.1" \
   -F "population=eur"
 ```
 
@@ -78,7 +78,7 @@ curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputations
   -H "X-Auth-Token: $TOKEN" \
   -F "files=@/path-to/file1.vcf.gz" \
   -F "files=@/path-to/file2.vcf.gz" \
-  -F "refpanel=1000g-phase-3-v5" \
+  -F "refpanel=1000g-phase-3-v5@2.1.1" \
   -F "population=eur"
 ```
 
@@ -108,7 +108,7 @@ token = 'YOUR-API-TOKEN'
 
 data = {
     'job-name': "test_api_token",
-    'refpanel': '1000g-phase-3-v5',
+    'refpanel': '1000g-phase-3-v5@2.1.1',
     'build': 'hg19',
     'population': 'eur'
 }
@@ -141,7 +141,7 @@ token = 'YOUR-API-TOKEN'
 
 data = {
     'job-name': "test_api_token",
-    'refpanel': '1000g-phase-3-v5',
+    'refpanel': '1000g-phase-3-v5@2.1.1',
     'build': 'hg19',
     'population': 'eur'
 }

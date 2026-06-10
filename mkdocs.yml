@@ -13,7 +13,7 @@ nav:
 - Developer Documentation:
   - API: api.md
   - Docker: docker.md
-  - Create Reference Panels: create-reference-panels.md
+  - Create a Reference Panel: create-reference-panels.md
 - Contact: contact.md
 
 repo_name: hmgu-itg/imputationserver-doc

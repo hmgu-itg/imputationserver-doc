@@ -41,7 +41,7 @@ Please make sure that all files fulfill the [requirements](./prepare-your-data.m
     Since version 1.7.2 URL-based uploads (sftp and http) are no longer supported. Please use direct file uploads instead. 
 
 ### Build
-Please select the build of your data. Currently the options **hg19** and **hg38** are supported. the Helmholtz Munich Imputation Server automatically updates the genome positions (liftOver) of your data. All reference panels  are based on hg19 coordinates.
+Please select the build of your data. Currently the options **hg19** and **hg38** are supported. the Helmholtz Munich Imputation Server automatically updates the genome positions (liftOver) of your data.
 
 ### rsq Filter
 To minimize the file size, the Helmholtz Munich Imputation Server includes a r<sup>2</sup> filter option, excluding all imputed SNPs with a r<sup>2</sup>-value (= imputation quality) smaller then the specified value.
@@ -151,7 +151,7 @@ All results can be downloaded directly via your browser by clicking on the filen
 
 ### Download using `wget`
 
-In order to download results via the commandline using `wget`or `aria2` you need to click on the **wget** symbol (located right to the folder header) to get the needed private links.
+In order to download results via the commandline using `wget` you need to click on the **wget** symbol (located right to the folder header) to get the needed private links.
 
 ![](images/share_data_link.png)
 

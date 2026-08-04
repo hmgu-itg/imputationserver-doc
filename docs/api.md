@@ -15,7 +15,7 @@ For security reasons, Api Tokens are valid for 30 days. You can check the status
 ## Job Submission for Whole Genome Imputation
 The API allows to submit imputation jobs and to set several parameters.
 
-### POST /jobs/submit/imputationserver@2.1.9 
+### POST /jobs/submit/imputationserver@2.1.13 
 
 The following parameters can be set:
 
@@ -46,7 +46,7 @@ Command:
 ```sh
 TOKEN="YOUR-API-TOKEN";
 
-curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.1.9 \
+curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.1.13 \
   -H "X-Auth-Token: $TOKEN" \
   -F "files=@/path-to/file.vcf.gz" \
   -F "refpanel=1000g-phase-3-v5@2.1.1" \
@@ -74,7 +74,7 @@ Command:
 ```sh
 TOKEN="YOUR-API-TOKEN";
 
-curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.1.9 \
+curl https://imputationserver.helmholtz-munich.de/api/v2/jobs/submit/imputationserver@2.1.13 \
   -H "X-Auth-Token: $TOKEN" \
   -F "files=@/path-to/file1.vcf.gz" \
   -F "files=@/path-to/file2.vcf.gz" \
@@ -118,12 +118,12 @@ headers = {'X-Auth-Token' : token}
 # submit new job
 vcf = '/path/to/genome.vcf.gz';
 files = {'files' : open(vcf, 'rb')}
-r = requests.post(url + '/jobs/submit/imputationserver@2.1.9',
+r = requests.post(url + '/jobs/submit/imputationserver@2.1.13',
                   files=files, data=data, headers=headers)
 
 if r.status_code != 200:
   print(r.json()['message'])
-  raise Exception('POST /jobs/submit/imputationserver@2.1.9 {}'.format(r.status_code))
+  raise Exception('POST /jobs/submit/imputationserver@2.1.13 {}'.format(r.status_code))
 
 # print response and job id
 print(r.json()['message'])
@@ -152,12 +152,12 @@ headers = {'X-Auth-Token' : token}
 vcf = '/path/to/file1.vcf.gz';
 vcf1 = '/path/to/file2.vcf.gz';
 files = [('files', open(vcf, 'rb')), ('files', open(vcf1, 'rb'))]
-r = requests.post(url + 'jobs/submit/imputationserver@2.1.9',
+r = requests.post(url + 'jobs/submit/imputationserver@2.1.13',
                   files=files, data=data, headers=headers)
 
 if r.status_code != 200:
   print(r.json()['message'])
-  raise Exception('POST /jobs/submit/imputationserver@2.1.9 {}'.format(r.status_code))
+  raise Exception('POST /jobs/submit/imputationserver@2.1.13 {}'.format(r.status_code))
 
 # print message
 print(r.json()['message'])
@@ -187,7 +187,7 @@ curl -H "X-Auth-Token: $TOKEN" https://imputationserver.helmholtz-munich.de/api/
     "pages":[1],
     "data": [{
          "app":null,
-         "application":"Genotype Imputation (Minimac4), 2.1.9 2.1.9",
+         "application":"Genotype Imputation (Minimac4), 2.1.13 2.1.13",
          "canceld":false,
          "complete":true,
          "currentTime":1714036281474,
@@ -279,8 +279,8 @@ Response:
 
 {
     "app": null,
-    "application": "Genotype Imputation (Minimac4), 2.1.9 2.1.9",
-    "applicationId": "imputationserver@2.1.9",
+    "application": "Genotype Imputation (Minimac4), 2.1.13 2.1.13",
+    "applicationId": "imputationserver@2.1.13",
     "canceld": false,
     "complete": true,
     "currentTime": 1714040634188,
@@ -334,8 +334,8 @@ print(json.dumps(r.json(), indent=4))
 ```json
 {
     "app": null,
-    "application": "Genotype Imputation (Minimac4), 2.1.9 2.1.9",
-    "applicationId": "imputationserver@2.1.9",
+    "application": "Genotype Imputation (Minimac4), 2.1.13 2.1.13",
+    "applicationId": "imputationserver@2.1.13",
     "canceld": false,
     "complete": true,
     "currentTime": 1714040634188,
